@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import LoadingData from "../../components/Loading";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Pagination from "../../components/Pagination";
 
 const Posts = () => {
@@ -41,7 +41,12 @@ const Posts = () => {
 	return (
 		<div style={{ padding: "10px" }}>
 			{posts.map((post) => {
-				return <div key={post.id}>{post.title}</div>;
+				return (
+					<Link to={`/posts/${post.id}`} key={post.id}>
+						{post.title}
+						<br />
+					</Link>
+				);
 			})}
 
 			<Pagination currentPage={page} totalPages={5} onPageChange={onPageChange} page={page} />

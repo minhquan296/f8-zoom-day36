@@ -1,0 +1,18 @@
+.container {
+	padding: 15px 20px;
+
+	.comments {
+		margin-top: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.comment {
+			display: flex;
+			flex-direction: column;
+			background: #9b9696;
+			border-radius: 5px;
+			padding: 2px 8px;
+		}
+	}
+}
