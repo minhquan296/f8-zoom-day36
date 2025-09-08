@@ -1,6 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
-	return <div className={styles.footer}>Footer</div>;
+	return (
+		<footer className={styles.footer}>
+			<div className={styles.footerWrapper}>
+				<Link to="/contact">Contact</Link>
+				<Link to="/privacy">Privacy</Link>
+			</div>
+		</footer>
+	);
 };
 export default Footer;
