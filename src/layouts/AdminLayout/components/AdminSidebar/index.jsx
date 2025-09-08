@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import styles from "./AdminSidebar.module.scss";
 
 const AdminSidebar = () => {
 	return (
-		<ul>
+		<ul className={styles.sidebar}>
 			<li>
 				<Link to="/admin">Dasboard</Link>
 			</li>
