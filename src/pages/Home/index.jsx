@@ -1,4 +1,3 @@
-import Navigation from "../../components/Navigation";
 import styles from "./Home.module.scss";
 
 const Home = () => {
@@ -7,7 +6,6 @@ const Home = () => {
 			<div className={styles.homeContainer}>
 				<h1 className={styles.title}>Home</h1>
 			</div>
-			<Navigation />
 		</div>
 	);
 };

@@ -1,4 +1,10 @@
+import styles from "./AdminFooter.module.scss";
+
 const Footer = () => {
-	return <div>Footer Admin</div>;
+	return (
+		<footer className={styles.adminFooter}>
+			<p className={styles.title}>Admin Footer</p>
+		</footer>
+	);
 };
 export default Footer;

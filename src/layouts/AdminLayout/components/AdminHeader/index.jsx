@@ -1,4 +1,10 @@
+import styles from "./AdminHeader.module.scss";
+
 const Header = () => {
-	return <div>Admin Header</div>;
+	return (
+		<header className={styles.adminHeader}>
+			<p className={styles.title}>Admin Header</p>
+		</header>
+	);
 };
 export default Header;
