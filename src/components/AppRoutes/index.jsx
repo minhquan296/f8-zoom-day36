@@ -16,10 +16,12 @@ import Dashboard from "../../pages/Dashboard";
 import Settings from "../../pages/Settings";
 import NotFound from "../../pages/NotFound";
 import SomeLayout from "../../layouts/SomeLayout";
+import ScrollToTop from "../ScrollToTop";
 
 const AppRouters = () => {
 	return (
 		<Router>
+			<ScrollToTop />
 			<Routes>
 				<Route element={<SomeLayout />}>
 					<Route element={<DefaultLayout />}>
