@@ -1,11 +1,12 @@
+import styles from "./NotFound.module.scss";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 const NotFound = () => {
 	return (
-		<div>
+		<div className={styles.notFoundContainer}>
 			<Header />
-			<p>NOT FOUND</p>
+			<p className={styles.notFoundText}>NOT FOUND</p>
 			<Footer />
 		</div>
 	);

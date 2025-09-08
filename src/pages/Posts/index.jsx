@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import LoadingData from "../../components/Loading";
 import { Link, useSearchParams } from "react-router-dom";
 import Pagination from "../../components/Pagination";
+import styles from "./Posts.module.scss";
 
 const Posts = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -27,29 +28,30 @@ const Posts = () => {
 		handlePostData();
 	}, [page]);
 
-	useEffect(() => {
-		if (page > 5) {
-			onPageChange(1);
-		}
-		if (page <= 0) {
-			onPageChange(5);
-		}
-	}, [page, setSearchParams, onPageChange]);
-
 	if (!posts.length) return <LoadingData />;
 
 	return (
-		<div style={{ padding: "10px" }}>
-			{posts.map((post) => {
-				return (
-					<Link to={`/posts/${post.id}`} key={post.id}>
-						{post.title}
-						<br />
-					</Link>
-				);
-			})}
+		<div className={styles.container}>
+			<div className={styles["post-list"]}>
+				{posts.map((post) => {
+					return (
+						<Link to={`/posts/${post.id}`} key={post.id}>
+							{post.title}
+							<br />
+						</Link>
+					);
+				})}
 
-			<Pagination currentPage={page} totalPages={5} onPageChange={onPageChange} page={page} />
+				<div className={styles.pagination}>
+					<Pagination
+						firstPage={1}
+						currentPage={page}
+						totalPages={5}
+						onPageChange={onPageChange}
+						page={page}
+					/>
+				</div>
+			</div>
 		</div>
 	);
 };
